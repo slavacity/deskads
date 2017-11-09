@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Новое объявление DeskAds</title>
+</head>
+<body>
+    <div>
+        <div>
+            <a href="/">на главную</a>
+        </div>
+        <form th:object="${announcementForm}" method="post">
+
+            <input hidden="hidden" th:field="*{id}"/>
+
+            <label>Заголовок объявления</label><br/>
+            <input type="text" th:field="*{title}" size="67"/><br/>
+            <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p><br/>
+
+            <label>Подробное описание</label><br/>
+            <textarea th:field="*{text}" cols="50" rows="10"></textarea><br/>
+            <p th:if="${#fields.hasErrors('text')}" th:errors="*{text}"></p><br/>
+
+            <input type="submit" value="Подать объявление"/>
+        </form>
+    </div>
+</body>
+</html>

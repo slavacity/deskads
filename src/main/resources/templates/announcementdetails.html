@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Детали объявления</title>
+</head>
+<body>
+    <div>
+        <a href="/">на главную</a>
+    </div>
+    <div th:object="${announcement}">
+        <table>
+            <tr>
+                <th>ID:</th>
+                <td th:text="*{id}"></td>
+            </tr>
+            <tr>
+                <th>Заголовок объявления:</th>
+                <td th:text="*{title}"></td>
+            </tr>
+            <tr>
+                <th>Подробное описание:</th>
+                <td th:text="*{text}"></td>
+            </tr>
+            <tr>
+                <th>Опубликовано</th>
+                <td th:text="*{date}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

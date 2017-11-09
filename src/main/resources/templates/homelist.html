@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Доска Объявлений DeskAds</title>
+
+</head>
+<body>
+<div>
+    <a href="/new-announcement">Подать объявление</a>
+    <div th:if="${not #lists.isEmpty(announcements)}">
+    <h2>Все Объявления</h2>
+        <table cellpadding="15">
+            <tr>
+                <th>ID</th>
+                <th>Краткое описание</th>
+                <th>Опубликовано</th>
+            </tr>
+            <tr th:each="announcement: ${announcements}">
+                <td th:text="${announcement.id}"></td>
+                <td><a th:href="@{/announcement/show/{id}(id=${announcement.id})}" th:text="${announcement.title}"></a></td>
+                <!--<td th:text="${announcement.title}"></td>-->
+                <td th:text="${announcement.date}"></td>
+                <td><a th:href="@{/edit-announcement/{id} (id=${announcement.id})}">изменить</a></td>
+                <td><a th:href="@{/announcement/delete/{id}(id=${announcement.id})}"><img src="img/close.png" height="15"/></a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
