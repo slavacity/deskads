@@ -9,7 +9,7 @@
         <div>
             <a href="/">на главную</a>
         </div>
-        <form th:object="${announcementForm}" method="post">
+        <form th:object="${announcementDto}" method="post">
 
             <input hidden="hidden" th:field="*{id}"/>
 

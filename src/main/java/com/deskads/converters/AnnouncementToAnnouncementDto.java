@@ -1,22 +1,19 @@
 package com.deskads.converters;
 
 import com.deskads.domain.Announcement;
-import com.deskads.dto.AnnouncementForm;
+import com.deskads.dto.AnnouncementDto;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-/**
- * Created by Administrator on 05.11.2017.
- */
 @Component
-public class AnnouncementToAnnouncementForm implements Converter<Announcement, AnnouncementForm> {
+public class AnnouncementToAnnouncementDto implements Converter<Announcement, AnnouncementDto> {
 
     @Override
-    public AnnouncementForm convert(Announcement announcement){
-        AnnouncementForm aForm = new AnnouncementForm();
+    public AnnouncementDto convert(Announcement announcement) {
+        AnnouncementDto aForm = new AnnouncementDto();
         aForm.setId(String.valueOf(announcement.getId()));
         aForm.setTitle(announcement.getTitle());
         aForm.setText(announcement.getText());

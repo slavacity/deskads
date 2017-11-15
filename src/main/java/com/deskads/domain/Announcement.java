@@ -3,9 +3,7 @@ package com.deskads.domain;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by Administrator on 02.11.2017.
- */
+
 @Entity
 @Table(name = "Announcement")
 public class Announcement {

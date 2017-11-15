@@ -10,9 +10,6 @@ import org.springframework.stereotype.Component;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 
-/**
- * Created by Administrator on 02.11.2017.
- */
 /*
 @Component
 public class DBConfig {
